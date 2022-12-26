@@ -1,0 +1,24 @@
+@mixin block($w:50px, $h:50px, $back:white, $bor:black)
+  width: $w
+  height: $h 
+  background-color: $back
+  border: solid 2px $bor
+  transition-duration: 0.8 //變化的時間，加上後動畫會較有連貫平滑感
+
+.block1
+  +block(200px,200px)
+
+.block1:hover .block2
+  background-color: red
+  width: 100px
+
+.block1:hover .block3
+  background-color: orange 
+  width: 150px
+
+.block1:active 
+  background-color: blue
+
+.block2,.block3 
+  +block(50px,50px)
+  
